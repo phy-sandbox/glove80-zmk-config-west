@@ -1,11 +1,11 @@
 manifest:
   remotes:
-    - name: moergo-sc
-      url-base: https://github.com/moergo-sc
+    - name: phy-sandbox
+      url-base: https://github.com/phy-sandbox
   projects:
     - name: zmk
-      remote: moergo-sc
-      revision: main
+      remote: phy-sandbox
+      revision: glove80_dongle
       import: app/west.yml
   self:
     path: config

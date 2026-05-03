@@ -1,0 +1,4 @@
+&underglow_indicators {
+    usb-state = <2>;
+    central-usb = <5>;
+};
