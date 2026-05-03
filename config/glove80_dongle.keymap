@@ -1,0 +1,7 @@
+/*
+ * Dongle keymap wrapper.
+ *
+ * Single source of truth: update config/glove80.keymap.
+ * Add any dongle-only keymap overrides below this include if needed.
+ */
+#include "glove80.keymap"
