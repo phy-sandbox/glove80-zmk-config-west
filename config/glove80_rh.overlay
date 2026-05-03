@@ -1,0 +1,11 @@
+/ {
+    chosen {
+        zmk,underglow-indicators = &underglow_indicators;
+    };
+
+    underglow_indicators: underglow-indicators {
+        compatible  = "zmk,underglow-indicators";
+        bat-lhs     = <36 30 24 18 12 7>;
+        usb-state   = <5>;
+    };
+};
