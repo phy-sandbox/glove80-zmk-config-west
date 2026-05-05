@@ -6,6 +6,6 @@
     underglow_indicators: underglow-indicators {
         compatible  = "zmk,underglow-indicators";
         bat-lhs     = <36 30 24 18 12 7>;
-        usb-state   = <5>;
+        usb-state = <2>;
     };
 };

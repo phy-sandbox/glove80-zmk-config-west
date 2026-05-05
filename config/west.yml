@@ -5,7 +5,7 @@ manifest:
   projects:
     - name: zmk
       remote: phy-sandbox
-      revision: main
+      revision: glove80_dongle
       import: app/west.yml
   self:
     path: config
