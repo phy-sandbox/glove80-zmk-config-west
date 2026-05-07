@@ -27,13 +27,155 @@ If you are looking to dig deeper into ZMK and develop new functionality, it is r
 3. Add your chosen configuration such as keymap to the `config` directory as described in [the ZMK documentation](https://zmk.dev/docs/user-setup)
 4. Commit and push your changes to your personal repo. Upon pushing it, GitHub Actions will start building a new version of your firmware with the updated keymap.
 
-## Firmware Files
-To locate your firmware files and reflash your Glove80:
-1. log into GitHub and navigate to your personal config repository you just uploaded your keymap changes to.
-2. Click "Actions" in the main navigation, and in the left navigation click the "Build" link.
-3. Select the desired workflow run in the centre area of the page (based on date and time of the build you wish to use). You can also start a new build from this page by clicking the "Run workflow" button.
-4. After clicking the desired workflow run, you should be presented with a section at the bottom of the page called "Artifacts". This section contains the results of your build, in a file called `firmware.zip`.
-5. Download `firmware.zip` and extract it to reveal two files, `glove80_lh-zmk.uf2` and `glove80_rh-zmk.uf2`: these are the firmware for the left and right sides of the keyboard respectively.
-6. Flash the firmware to Glove80 according to the user documentation on the official Glove80 Support website (linked above). *Note that unlike firmware built with the standard Glove80 toolchain, you must select the correct firmware file to upload to each half of the keyboard.*
+## Dongle Setup
 
-Your keyboard is now ready to use.
+> **Inspired by:** [hopg's ZMK repository](https://github.com/hopg/zmk/tree/slice-mk-glove80-rh-rgb)
+
+This guide explains how to configure a Glove80 keyboard with an nRF52840 dongle. This setup allows both Glove80 halves to work as Bluetooth peripherals with the dongle acting as the central device.
+
+**⚠️ WARNING:** This is not an official release from MoErgo. Proceed with caution. If the steps are not followed correctly you may damage your dongle and/or your Glove80. This setup has been tested and developed using the [MakerDiary nRF52840 MDK USB Dongle](https://wiki.makerdiary.com/nrf52840-mdk-usb-dongle/) since it is shipped with UF2 Bootloader. **This configuration has not been tested with other nRF52840 dongles**, so compatibility cannot be guaranteed.
+
+### Features
+
+- Charge both halves of the Glove80 once every 4 months (often lasting even longer)
+- Seamless use with a KVM switch
+- RGB underglow indicators implemented with a few adjustments:
+  - The USB output will show the status of the dongle's USB output
+  - The right half will now show RGB status indicators
+  - Each half will only show its own battery level
+  - Added a new indicator for each half at T3 to show the peripheral's local USB output
+
+### Dongle Reconnection
+
+If the dongle doesn't reconnect after being removed and reinserted from your USB port, follow these steps:
+
+1. Turn off both Glove80 halves
+2. Remove the nRF52840 dongle from the USB port
+3. Reinsert the nRF52840 dongle into the USB port
+4. Turn on one Glove80 and start typing until you see a response
+5. Turn on the other Glove80 and start typing until you see a response
+
+**Note:** If this doesn't work on the first attempt, repeat the steps and wait a few seconds between each step.
+
+### Building Firmware
+
+#### Prerequisites
+
+Ensure you have completed [ZMK's development setup](https://zmk.dev/docs/development/setup) and all dependencies are installed.
+
+#### Importing a Custom Keymap
+
+Export your keymap from the [Glove80 Layout Editor](https://my.glove80.com) and copy it to:
+```bash
+config/glove80.keymap
+```
+**Note:** The filename must be exactly `glove80.keymap`
+
+#### Building
+
+Navigate to the `app` directory and build firmware for all three devices:
+
+```bash
+cd app
+```
+
+**Glove80 Left Hand:**
+```bash
+west build -p -d build/glove80_lh -b glove80_lh
+```
+
+**Glove80 Right Hand:**
+```bash
+west build -p -d build/glove80_rh -b glove80_rh
+```
+
+**nRF52840 Dongle:**
+```bash
+west build -p -d build/dongle -b nordic_nrf52840_dongle_slicemk -- -DSHIELD=glove80_dongle
+```
+
+### Installing Firmware
+
+#### Resetting Bluetooth Bonds
+
+Before installing firmware, reset the Bluetooth pairing bonds on each device.
+
+##### Glove80 Left Hand
+1. Turn off the device via the power switch
+2. Press and hold `Magic` + `3` while toggling the power switch on
+3. Hold for 10 seconds, then turn off
+
+##### Glove80 Right Hand
+1. Turn off the device via the power switch
+2. Press and hold `PgDn` + `8` while toggling the power switch on
+3. Hold for 10 seconds, then turn off
+
+##### nRF52840 Dongle
+
+If you need to reset bonds on the dongle:
+
+1. Build the settings reset firmware:
+   ```bash
+   west build -p -d build/settings_reset -b nice_nano -- -DSHIELD=settings_reset
+   ```
+
+2. Double-press the reset switch to enter DFU mode
+3. Copy `app/build/settings_reset/zephyr/zmk.uf2` to the `BBOARDBOOT` USB Mass Storage device
+4. Double-press reset again to re-enter DFU mode
+5. Copy the dongle firmware to the `BBOARDBOOT` device
+
+#### Installing Firmware Files
+
+##### Glove80 Left Hand
+1. Connect the left hand to your computer via USB
+2. Press and hold `Magic` + `E` while toggling the power switch on
+3. The device appears as `GLV80LHBOOT` USB Mass Storage
+4. Copy `app/build/glove80_lh/zephyr/zmk.uf2` to the root directory
+
+##### Glove80 Right Hand
+1. Connect the right hand to your computer via USB
+2. Press and hold `I` + `PgDn` while toggling the power switch on
+3. The device appears as `GLV80RHBOOT` USB Mass Storage
+4. Copy `app/build/glove80_rh/zephyr/zmk.uf2` to the root directory
+
+##### nRF52840 Dongle
+1. Double-press the reset switch to enter DFU mode
+2. The device appears as `BBOARDBOOT` USB Mass Storage
+3. Copy `app/build/dongle/zephyr/zmk.uf2` to the root directory
+
+### Troubleshooting
+
+#### General Steps
+
+Before proceeding with specific troubleshooting, try the dongle reconnection steps in the [Dongle Reconnection](#dongle-reconnection) section above.
+
+#### Clearing Bonds
+
+If pairing issues persist after trying reconnection steps:
+
+##### Glove80 Left Hand
+1. Turn off the device
+2. Press and hold `Magic` + `3` while toggling the power switch on
+3. Hold for 10 seconds
+
+##### Glove80 Right Hand
+1. Turn off the device
+2. Press and hold `PgDn` + `8` while toggling the power switch on
+3. Hold for 10 seconds
+
+##### nRF52840 Dongle
+Follow the bond clearing steps outlined in the [Installing Firmware](#installing-firmware) section.
+
+#### Viewing Logs
+
+Logging is enabled by default on the nRF52840 dongle. To view logs for debugging:
+
+```bash
+sudo tio /dev/ttyACM0
+```
+
+This output can help diagnose connection and pairing issues.
+
+### Known Limitations
+
+- Currently, RGB indicators only show the power level of the left Glove80 hand
