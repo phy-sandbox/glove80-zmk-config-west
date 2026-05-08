@@ -39,11 +39,17 @@ This guide explains how to configure a Glove80 keyboard with an nRF52840 dongle.
 
 - Charge both halves of the Glove80 once every 4 months (often lasting even longer)
 - Seamless use with a KVM switch
-- RGB underglow indicators implemented with a few adjustments:
-  - The USB output will show the status of the dongle's USB output
-  - The right half will now show RGB status indicators
-  - Each half will only show its own battery level
-  - Added a new indicator for each half at T3 to show the peripheral's local USB output
+- **Battery efficiency-first architecture**: Each half displays only its own battery level on its own underglow LEDs
+  - Remote peripheral battery fetching is intentionally avoided to minimize BLE traffic and power consumption
+  - Conscious design decision: active BLE queries for cross-peripheral battery status contradict the battery-efficiency objective
+- RGB underglow indicators changes from the standard Glove80:
+  - The USB output will show the status of the dongle's USB output (central)
+  - Each peripheral shows its local USB enumeration status at T3
+  - Each half displays its own battery level with color-coded indicators
+- Semantic underglow property naming for dongle-central topology:
+  - New properties: `bat-local` (local device battery), `bat-left`, `bat-right` (Glove80-specific)
+  - Deprecated properties: `bat-lhs`, `bat-rhs` (legacy from left-central era) maintained for backwards compatibility
+  - Central USB state indicator (`central-usb` property) shows dongle's USB connection status on left half
 
 ### Dongle Reconnection
 
@@ -178,4 +184,5 @@ This output can help diagnose connection and pairing issues.
 
 ### Known Limitations
 
-- Currently, RGB indicators only show the power level of the left Glove80 hand
+- For Glove80 early versions with underglow LEDs only on the left half, only the left half's battery level will be displayed
+- RGB underglow rendering occurs only on peripheral devices; the dongle central does not render LEDs directly (indicators are only visible on connected Glove80 halves)
