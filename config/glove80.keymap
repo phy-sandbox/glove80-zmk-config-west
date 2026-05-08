@@ -241,6 +241,7 @@
           ___ ___ ___ ___ ___         ___ ___ ___     ___ ___ ___         ___ ___ ___ ___ ___
         >;
         layer-id = <LAYER_Template>;
+        fade-delay = <2>;
       };
       */
 
@@ -254,6 +255,7 @@
           ___ ___ ___ ___ LAC         BSL BNL BCL     ___ LAC LAC         LAC ___ ___ ___ ___
         >;
         layer-id = <0>;
+        fade-delay = <2>;
       };
 
       #ifdef LAYER_macOS
@@ -267,6 +269,7 @@
           RED RED ___ ___ LAC         BSL BNL BCL     ___ LAC LAC         LAC ___ ___ RED RED
         >;
         layer-id = <LAYER_macOS>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -281,6 +284,7 @@
           ___ ___ ___ ___ LAC         BSL BNL BCL     ___ LAC LAC         LAC ___ ___ ___ ___
         >;
         layer-id = <LAYER_LeftPinky>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -295,6 +299,7 @@
           ___ ___ ___ ___ LAC         BSL BNL BCL     ___ LAC LAC         LAC ___ ___ ___ ___
         >;
         layer-id = <LAYER_LeftRingy>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -309,6 +314,7 @@
           ___ ___ ___ ___ LAC         BSL BNL BCL     ___ LAC LAC         LAC ___ ___ ___ ___
         >;
         layer-id = <LAYER_LeftMiddy>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -323,6 +329,7 @@
           ___ ___ ___ ___ LAC         BSL BNL BCL     ___ LAC LAC         LAC ___ ___ ___ ___
         >;
         layer-id = <LAYER_LeftIndex>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -337,6 +344,7 @@
           ___ ___ ___ ___ LAC         BSL BNL BCL     ___ LAC LAC         LAC ___ ___ ___ ___
         >;
         layer-id = <LAYER_RightIndex>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -351,6 +359,7 @@
           ___ ___ ___ ___ LAC         BSL BNL BCL     ___ LAC LAC         LAC ___ ___ ___ ___
         >;
         layer-id = <LAYER_RightMiddy>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -365,6 +374,7 @@
           ___ ___ ___ ___ LAC         BSL BNL BCL     ___ LAC LAC         LAC ___ ___ ___ ___
         >;
         layer-id = <LAYER_RightRingy>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -379,6 +389,7 @@
           ___ ___ ___ ___ LAC         BSL BNL BCL     ___ LAC LAC         LAC ___ ___ ___ ___
         >;
         layer-id = <LAYER_RightPinky>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -393,6 +404,7 @@
           PNK PUR PUR PUR PUR         RED ___ ___     SPG SPG SPG         PUR PUR PUR PUR PNK
         >;
         layer-id = <LAYER_Cursor>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -407,6 +419,7 @@
           TEA PUR PUR PUR PUR         ___ RED ___     SPG SPG GOL         SPG SPG SPG SPG SPG
         >;
         layer-id = <LAYER_Number>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -421,6 +434,7 @@
           ___ PUR PUR PUR PUR         ___ ___ ___     AZU AZU AZU         CHU CHU CHU CHU CHU
         >;
         layer-id = <LAYER_Function>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -435,6 +449,7 @@
           ___ ___ ___ ___ RED         YLW ___ ___     ___ ___ ___         ___ CYN CYN ___ ___
         >;
         layer-id = <LAYER_Emoji>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -449,6 +464,7 @@
           COR BLU PNK PNK BLU         GDN GDN GDN     ___ ___ RED         YLW GRN CYN MAJ ___
         >;
         layer-id = <LAYER_Symbol>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -463,6 +479,7 @@
           ___ ___ BLU BLU BLU         GDN GDN GDN     ___ RED ___         YLW GRN CYN MAJ ___
         >;
         layer-id = <LAYER_Mouse>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -477,6 +494,7 @@
           ___ ___ BLU BLU BLU         GDN GDN GDN     ___ RED ___         YLW GRN CYN MAJ ___
         >;
         layer-id = <LAYER_Mouse_fast>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -491,6 +509,7 @@
           ___ ___ BLU BLU BLU         GDN GDN GDN     ___ RED ___         YLW GRN CYN MAJ ___
         >;
         layer-id = <LAYER_Mouse_warp>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -505,6 +524,7 @@
           ___ ___ BLU BLU BLU         GDN GDN GDN     ___ RED ___         YLW GRN CYN MAJ PUR
         >;
         layer-id = <LAYER_Mouse_slow>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -519,6 +539,7 @@
           ___ ___ ___ ___ ORN         SSL SNL SCL     BLU BLU BLU         YLW GRN CYN MAJ PUR
         >;
         layer-id = <LAYER_System>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -533,6 +554,7 @@
           SPG SPG SPG SPG SPG         ___ ___ ___     ___ ___ ___         RED ___ ___ ___ ___
         >;
         layer-id = <LAYER_World>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -547,6 +569,7 @@
           ___ ___ ___ ___ ___         ___ ___ ___     ___ ___ ___         RED ___ ___ ___ ___
         >;
         layer-id = <LAYER_Typing>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -561,6 +584,7 @@
           ___ GRN ___ ___ RED         COR GRN COR     AZU AZU AZU         ___ ___ ___ ___ ___
         >;
         layer-id = <LAYER_Gaming>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -575,6 +599,7 @@
           ___ ___ ___ ___ RED         RED RED COR     COR RED RED         RED ___ ___ ___ ___
         >;
         layer-id = <LAYER_Lower>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -589,6 +614,7 @@
           RED ___ ___ ___ ___         ___ ___ ___     ___ ___ ___         ___ ___ ___ ___ ___
         >;
         layer-id = <LAYER_Factory>;
+        fade-delay = <2>;
       };
       #endif
 
@@ -1696,12 +1722,12 @@ behaviors {
   // #define DIFFICULTY_LEVEL 2 // slower (400ms)
   // #define DIFFICULTY_LEVEL 3 // normal (300ms)
   // #define DIFFICULTY_LEVEL 4 // faster (200ms)
-  // #define DIFFICULTY_LEVEL 5 // expert (100ms)
+  #define DIFFICULTY_LEVEL 0 // expert (100ms)
   //
   // You can disable this setting by omitting it or assigning a `0` zero,
   // in which case it will default to my personal set of time thresholds.
   //
-  #define DIFFICULTY_LEVEL 0 // sunaku (150ms)
+  // #define DIFFICULTY_LEVEL 0 // sunaku (150ms)
   //
   // No matter what difficulty level you choose, you can always override
   // any settings in this keymap at the beginning of this configuration.
@@ -10579,6 +10605,49 @@ macros {
 / {
     macros {
 
+        KVM1: KVM1 {
+            label = "&KVM1";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <40>;
+            wait-ms = <100>;
+            bindings = <&kp SLCK>
+                , <&kp SLCK>
+                , <&kp N1>;
+        };
+
+        KVM2: KVM2 {
+            label = "&KVM2";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <40>;
+            wait-ms = <100>;
+            bindings = <&kp SLCK>
+                , <&kp SLCK>
+                , <&kp N2>;
+        };
+
+        KVM3: KVM3 {
+            label = "&KVM3";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <40>;
+            wait-ms = <100>;
+            bindings = <&kp SLCK>
+                , <&kp SLCK>
+                , <&kp N3>;
+        };
+
+        KVM4: KVM4 {
+            label = "&KVM4";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <40>;
+            wait-ms = <100>;
+            bindings = <&kp SLCK>
+                , <&kp SLCK>
+                , <&kp N4>;
+        };
     };
 };
 
@@ -10601,8 +10670,8 @@ macros {
 
         layer_Enthium {
             bindings = <
-                        &none                          &none                          &none                          &none                          &none                                                                                                                                                                                     &none                           &none                           &none                           &none                         &none
-                        &none                         &kp N1                         &kp N2                         &kp N3                         &kp N4     &kp N5                                                                                                                                         &kp N6                          &kp N7                          &kp N8                          &kp N9                          &kp N0                         &none
+                        &none                          &none                          &none                          &none                          &none                                                                                                                                                                                     &none                           &none                           &none                           &none                     &kp LANG2
+                        &none                         &kp N1                         &kp N2                         &kp N3                         &kp N4     &kp N5                                                                                                                                         &kp N6                          &kp N7                          &kp N8                          &kp N9                          &kp N0                     &kp LANG1
                         &none                          &kp Q                          &kp Y                          &kp O                          &kp U  &kp EQUAL                                                                                                                                          &kp X                           &kp L                           &kp D                           &kp P                           &kp Z                         &none
                         &kp B  &LeftPinky (C, LAYER_Enthium)  &LeftRingy (I, LAYER_Enthium)  &LeftMiddy (A, LAYER_Enthium)  &LeftIndex (E, LAYER_Enthium)  &kp MINUS                                                                                                                                          &kp K  &RightIndex (H, LAYER_Enthium)  &RightMiddy (T, LAYER_Enthium)  &RightRingy (N, LAYER_Enthium)  &RightPinky (S, LAYER_Enthium)                         &kp W
  &sticky_key_modtap LSFT LSFT                        &kp SQT                      &kp COMMA                        &kp DOT                       &kp SEMI   &kp FSLH  &thumb LAYER_Function ESC  &thumb LAYER_Lower INSERT  &kp PG_UP    &thums_up     &thumb LAYER_Lower DELETE  &thumb LAYER_System ENTER   &kp J                           &kp M                           &kp G                           &kp F                           &kp V  &sticky_key_modtap RSFT RSFT
@@ -10942,12 +11011,12 @@ macros {
 
         layer_Magic {
             bindings = <
-  &bt BT_CLR             &none            &none            &none            &none                                                                                                  &none   &none   &none             &none  &bt BT_CLR_ALL
-       &to 0             &to 1            &to 2            &to 3           &trans           &trans                                                               &none             &none   &none   &none             &none           &none
-       &none   &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                               &none    &rgb_ug RGB_ON   &none   &none             &none           &none
- &bootloader   &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                               &none   &rgb_ug RGB_OFF   &none   &none             &none     &bootloader
-  &sys_reset             &none            &none            &none            &none            &none   &bt_2   &bt_3  &tog LAYER_Factory   &none   &none   &none   &none             &none   &none   &none             &none      &sys_reset
-       &none  &tog LAYER_macOS            &none            &none            &none                    &bt_0   &bt_1        &out OUT_USB   &none   &none   &none                     &none   &none   &none  &tog LAYER_macOS           &none
+  &bt BT_CLR             &none            &none            &none            &none                                                                                       &kp C_PWR   &none   &none             &none  &bt BT_CLR_ALL
+       &to 0             &to 1            &to 2            &to 3           &trans           &trans                                                               &none      &none   &none   &none             &none           &none
+       &none   &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                               &none      &KVM1   &KVM2   &KVM3             &KVM4           &none
+ &bootloader   &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                               &none      &none   &none   &none             &none     &bootloader
+  &sys_reset             &none            &none            &none            &none            &none   &bt_2   &bt_3  &tog LAYER_Factory   &none   &none   &none   &none      &none   &none   &none             &none      &sys_reset
+       &none  &tog LAYER_macOS            &none            &none            &none                    &bt_0   &bt_1        &out OUT_USB   &none   &none   &none              &none   &none   &none  &tog LAYER_macOS           &none
             >;
         };
 

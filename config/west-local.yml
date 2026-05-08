@@ -1,0 +1,12 @@
+manifest:
+  remotes:
+    - name: phy-sandbox
+      url-base: https://github.com/phy-sandbox
+  projects:
+    - name: zmk
+      # update the [username] and 'glove80_dongle' to your profile username and folder name in the url
+      url: /home/[username]/glove80_dongle/zmk
+      revision: glove80_dongle
+      import: app/west.yml
+  self:
+    path: config

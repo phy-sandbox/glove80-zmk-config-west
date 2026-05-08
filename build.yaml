@@ -4,4 +4,8 @@
 # control, add individual board + shield combinations to
 # the `include` property, e.g:
 #
-board: [ "glove80_lh", "glove80_rh" ]
+include:
+  - board: glove80_lh
+  - board: glove80_rh
+  - board: nrf52840_mdk_usb_dongle
+    shield: glove80_dongle
