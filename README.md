@@ -29,9 +29,9 @@ If you are looking to dig deeper into ZMK and develop new functionality, it is r
 
 ## Dongle Setup
 
-> **Inspired by:** [hopg's ZMK repository](https://github.com/hopg/zmk/tree/slice-mk-glove80-rh-rgb)
+> **Inspired by:** [hopg's ZMK repository](https://github.com/hopg/zmk/tree/slice-mk-glove80-rh-rgb) and [darknao's Per key/layer RGB underglow PR](https://github.com/moergo-sc/zmk/pull/36)
 
-This guide explains how to configure a Glove80 keyboard with an nRF52840 dongle. This setup allows both Glove80 halves to work as Bluetooth peripherals with the dongle acting as the central device. It is for a battery efficiency-first setup where the Glove80 is deskbound and you don't want to be recharging the left half every few weeks. In my setup, the dongle is permanently plugged into a KVM and so dongle doesn't need to be moved-.
+This guide explains how to configure a Glove80 keyboard with an nRF52840 dongle. This setup allows both Glove80 halves to work as Bluetooth peripherals with the dongle acting as the central device. It is for a battery efficiency-first setup where the Glove80 is deskbound and you don't want to be recharging the left half every few weeks. In my setup, the dongle is permanently plugged into a KVM and so dongle doesn't need to be moved.
 
 **⚠️ WARNING:** This is not an official release from MoErgo. Proceed with caution. If the steps are not followed correctly you may damage your dongle and/or your Glove80. This setup has been tested and developed using the [MakerDiary nRF52840 MDK USB Dongle](https://wiki.makerdiary.com/nrf52840-mdk-usb-dongle/) since it is shipped with UF2 Bootloader. **This configuration has not been tested with other nRF52840 dongles**, so compatibility cannot be guaranteed.
 
