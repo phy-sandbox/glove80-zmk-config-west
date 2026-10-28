@@ -4,9 +4,9 @@ manifest:
       url-base: https://github.com/phy-sandbox
   projects:
     - name: zmk
-      # update the [username] and 'glove80_dongle' to your profile username and folder name in the url
-      url: /home/[username]/glove80_dongle/zmk
-      revision: glove80_dongle
+      # Use a local zmk checkout path here when developing locally.
+      url: /home/pyoon/glove80_dongle/zmk
+      revision: feature/steno
       import: app/west.yml
   self:
     path: config
